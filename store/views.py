@@ -1,10 +1,4 @@
-from argparse import Action
-from email.headerregistry import Address
-import imp
-from itertools import product
-from multiprocessing import context
-from webbrowser import get
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import JsonResponse
 import json
@@ -22,7 +16,6 @@ from django.forms import inlineformset_factory
 from .filters import OrderFilter
 
 # imports to register a user.
-from django.views.generic import FormView
 from .forms import RegisterForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
