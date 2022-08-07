@@ -1,0 +1,83 @@
+{% extends 'store/main2.html' %}
+{% load static %}
+{% block content %}
+<br>
+    <!-- Cart Start -->
+    <div class="container-fluid pt-5">
+        <div class="row px-xl-5">
+            <div class="col-lg-8 table-responsive mb-5">
+                <table class="table table-bordered text-center mb-0">
+                    <thead class="bg-secondary text-dark">
+                        <tr>
+                            <th>Products</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    {% for item in items %}
+                    <tbody class="align-middle">
+                        <tr>
+                            <td class="align-middle"><img src="{{item.product.imageURL}}" alt="" style="width: 50px;"> {{item.product.name}}</td>
+                            <td class="align-middle">${{item.product.price|floatformat:2}}</td>
+                            <td class="align-middle">
+                                <div class="input-group quantity mx-auto" style="width: 100px;">
+                                    <div class="input-group-btn">
+                                        <button data-product="{{item.product.id}}" data-action="remove" class="btn btn-sm btn-primary chg-quantity update-cart" >
+                                        <i class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                    <input type="text" class="form-control form-control-sm bg-secondary text-center" value="{{item.quantity}}">
+                                    <div class="input-group-btn">
+                                        <button data-product="{{item.product.id}}" data-action="add" class="btn btn-sm btn-primary chg-quantity update-cart ">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="align-middle">${{item.get_total|floatformat:2}}</td>
+                           
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="col-lg-4">
+                {% comment %} <form class="mb-5" action="">
+                    <div class="input-group">
+                        <input type="text" class="form-control p-4" placeholder="Coupon Code">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary">Apply Coupon</button>
+                        </div>
+                    </div>
+                </form> {% endcomment %}
+                <div class="card border-secondary mb-5">
+                    <div class="card-header bg-secondary border-0">
+                        <h4 class="font-weight-semi-bold m-0">Cart Summary</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="font-weight-medium">No_Items:</h6>
+                            <h6 class="font-weight-medium">{{order.get_cart_items}}</h6>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3 pt-1">
+                            <h6 class="font-weight-medium">Subtotal</h6>
+                            <h6 class="font-weight-medium">${{order.get_cart_total|floatformat:2}}</h6>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <h6 class="font-weight-medium">Shipping Fee</h6>
+                            <h6 class="font-weight-medium">$0</h6>
+                        </div>
+                    </div>
+                    <div class="card-footer border-secondary bg-transparent">
+                        <div class="d-flex justify-content-between mt-2">
+                            <h5 class="font-weight-bold">Total:</h5>
+                            <h5 class="font-weight-bold">${{order.get_cart_total|floatformat:2}}</h5>
+                        </div>
+                        <a class="btn btn-block btn-primary my-3 py-3" href="{% url 'order_confirm' %}">Proceed To Checkout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>      
+{% endblock content %}

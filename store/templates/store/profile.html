@@ -1,0 +1,63 @@
+{%  extends 'store/main2.html' %}
+{% load static %}
+{% block content %}
+
+<br><br>
+{% if request.user.is_authenticated %}
+	<div class="row">
+	<div class="col-md-3">
+		<div class="">
+			<a class="btn btn-success" href="{% url 'store' %}"> &#8592; Back to Home</a>
+			<hr>
+			<h3 style="text-align: center">Profile Pic</h3>
+			<hr>
+			{% if request.user.customer.profile_pic %}
+			<img class="brand-logo" src="{{request.user.customer.profile_pic.url}}" >
+			{% else %}
+			<img class="profile-pic" src="{% static 'images/defaultimg.png' %}" >
+			{% endif %}
+		
+		</div>
+	</div>
+	<div class="col-md-9">
+		<div class="card card-body">
+			<div class="text-centteer">
+				<h5 class="inputs"> Username: {{ user}}</h5><br>
+				<h5 class="inputs">Name: {{user.last_name}} {{user.first_name}}</h5><br>
+				<h5 class="inputs"> Email: {{request.user.customer.email}}</h5><br>
+				<h5 class="inputs"> Date joined: {{user.date_joined}}</h5><br>
+				<h5 class="inputs"> Phone: {{request.user.customer.phone}}</h5><br>
+				{% if total_orders %}
+					<h5 class="inputs">Numbers of completed Orders: <strong class="odz">{{total_orders}}</strong></h5><br>
+				{% else %}
+					{% if request.user.is_authenticated %}
+					<h5 class="inputs">Numbers of completed Orders: <strong class="odz">Dear {{request.user.first_name}}, you have not placed any order</strong> </h5><br>
+					{% endif %}
+				{% endif %}
+				
+				{% if request.customer.order.complete %}
+					<h5 class="inputs">Numbers of pending Orders:{{request.customer.order.complete.count.all}} </h5><br>
+				{% else %}
+					<h5 class="inputs">Numbers of pending Orders: <strong class="odr"> No pending orders</strong </h5><br>
+					
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+	</div><br>
+	<div class="text-center">
+	<a class="btn btn-primary" href="{% url 'account' %}"> Edit Profile</a>
+	</div>
+	{% else %}
+	<div class='text-centter'>
+		<h5 class="text-center"> You are required to login to view Your profile</h5>
+	</div>
+	
+	<div class="text-center">
+		<a class="btn btn-success" href="{% url 'login' %}">Login</a>
+		</div>
+
+{% endif %}
+
+{% endblock %}

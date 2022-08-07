@@ -1,0 +1,25 @@
+{% extends 'store/main2.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<div class="text-centter">
+    {% if request.user.is_authenticated %}
+    <strong class="odz">Dear {{request.user.first_name}}, how do you want to make your payment?</strong>
+    {% else %}
+    <strong class="odz">In order to keep proper track of your order, you are adviced to login</strong>
+    {% endif %}
+</div>
+<br>
+<div class="text-center">
+    <a href="{% url 'checkout' %}" class="btn btn-primary"> Credit/Debit Card</a>
+ 
+    
+    <a href="{% url 'submit_pop' %}" class="btn btn-success">Local Bank Transfer</a>
+  
+    
+    
+</div>
+
+{% endblock %}

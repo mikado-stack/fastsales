@@ -1,0 +1,50 @@
+{% extends 'store/main2.html' %}
+{% load static %}
+{% block content %}
+{% include 'store/status.html' %}
+<br>
+
+<div class="row">	
+	<div class="col-md-12">
+		<div class="text-center">
+            <h5 class="odz"> ORDERS ITEMS</h5>
+            <h5 class="odz"> TOTAL ORDERED ITEMS ARE : {{total_orditems}}</h5>
+        </div>
+		<hr>
+		<div class="card card-body">
+			
+			<table class="table table-sm">
+				<tr>
+					<th>Customers with orders</th>
+					<th> Product</th>
+					<th>Order Id</th>
+					<th>Quantity</th>
+					<th>Ordered Date</th>
+                    <th>Update</th>
+					<th>Remove</th>
+				</tr>
+
+				{% for obj in ordereditems %}
+					<tr>
+						<td class="odz" ><strong>{{obj.customer}}</strong></td>
+						<td class="odz"><strong>{{obj.product.name}}</strong></td>
+						<td class="odz"><strong>{{obj.order.id}}</strong></td>
+						<td class="odz"><strong>{{obj.quantity}}</strong></td>
+                        <td class="odz"><strong>{{obj.date_added}}</strong></td>
+                        <td><a class="btn btn-sm btn-info" href="{/}">Update</a></td>
+
+					<td><a class="btn btn-sm btn-danger" href="{/}">Delete</a></td>
+						
+
+					</tr>
+				{% endfor %}
+			
+			</table>
+			
+		</div>
+	</div>
+
+</div>
+
+{% endblock %}
+
