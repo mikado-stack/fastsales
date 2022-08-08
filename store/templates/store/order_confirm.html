@@ -2,7 +2,6 @@
 {% load static %}
 
 
-
 {% block content %}
 <div class="text-centter">
     {% if request.user.is_authenticated %}
@@ -13,13 +12,14 @@
 </div>
 <br>
 <div class="text-center">
+    {% if request.user.is_authenticated %}
     <a href="{% url 'checkout' %}" class="btn btn-primary"> Credit/Debit Card</a>
  
     
     <a href="{% url 'submit_pop' %}" class="btn btn-success">Local Bank Transfer</a>
-  
-    
-    
+    {% else %}
+    <a href="{% url 'checkout' %}" class="btn btn-primary"> Credit/Debit Card</a>
+    {% endif %}
 </div>
 
 {% endblock %}

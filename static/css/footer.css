@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+footer{
+    width: 100%;
+    background: #00008b;
+    color: #fff;
+    padding: 50px 0 30px;
+    font-size: 13px;
+    line-height: 20px;
+}
+.roww{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.coll{
+    flex-basis: 25%;
+    padding: 10px;
+}
+.coll:nth-child(2), .col:nth-child(3){
+    flex-basis: 15%;
+}
+.footer_logo{
+    width: 80px;
+    position: relative;
+    top: -23px;
+    left: -20px;
+}
+.footer_aboutt{
+    position: relative;
+    top: -23px;
+}
+.coll h3{
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+    color: aliceblue;
+}
+.coll h4{
+    color: aliceblue;
+}
+.footer_emaile{
+    width: fit-content;
+    border-bottom: 1px solid #f66335;
+    margin: 20px 0;
+}
+.coll ul li{
+    list-style: none;
+    margin-bottom: 12px;
+}
+.coll ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+.coll form{
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #f66335;
+    margin-bottom: 50px;
+}
+.coll form .icon{
+    font-size: 18px;
+    margin-right: 10px;
+}
+.coll form input{
+    width: 100%;
+    background: transparent;
+    color: #ccc;
+    border: 0;
+    outline: none;
+}
+.coll form button{
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+.coll form button .icon_right{
+    font-size: 16px;
+    color: #ccc;
+}
+.coll .social_icons .social_icon{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: #fff;
+    background: #f66335;
+    margin-right: 15px;
+    padding: 5px;
+    cursor: pointer;
+}
+hr{
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    margin: 20px auto;
+}
+footer .copyrightt{
+    text-align: center;
+}
+.bottom_linee{
+    width: 100%;
+    height: 5px;
+    background: #767676;
+    border-radius: 3px;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    overflow: hidden;
+}
+.bottom_linee span{
+    width: 15px;
+    height: 100%;
+    background: #f66335;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    animation: moveline 2s linear infinite;
+}
+@keyframes moveline{
+    0%{
+        left:-20px;
+    }
+    100%{
+        left:100%;
+    }
+}
