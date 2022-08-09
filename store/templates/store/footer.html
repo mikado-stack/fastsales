@@ -6,40 +6,63 @@
     }
     </style> {% endcomment %}
 
-    <br><br>
 <body>
     {% block content %}
     <!-- Footer Start -->
-
-    <footer>
-       <div class="roww">
-           <div class="coll">
-               <img src="static/images/fastlink.png" class="footer_logo"> <br>
-               <p class="footer_aboutt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore harum molestias nesciunt, 
-                   doloremque magni aspernatur iste blanditiis, fugiat quaerat accusamus ut, vero tempore. 
-                   Fugiat, illum!
-               </p>
-           </div>
-           <div class="coll">
-               <h3>Links <div class="bottom_linee"><span></span></div></h3>
-               <ul> 
-                   <li><a href="{% url 'store' %}">HOME</a></li>
-                   <li><a href="{% url 'user' %}">USERPAGE</a></li>
-                   <li><a href="{% url 'profile' %}">PROFILE</a></li>
-                   <li><a href="{% url 'contact' %}">CONTACT US</a></li>
-               </ul>
-           </div>
-           <!-- <div class="coll">
-               <h3>Newsletter <div class="bottom_linee"><span></span></div></h3>
-               <form>
-                   <ion-icon class="icon" name="mail"></ion-icon>
-                   <input type="email" placeholder="Enter your email" required>
-                   <button type="submit"><ion-icon class="icon_right" name="arrow-round-forward"></ion-icon></button>
-               </form>
-           </div> -->
-       </div>
-       <hr>
-       <p class="copyrightt">Fast-Link Ⓒ 2022 - All Rights Reserved</p>
+    <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
+        <div class="row px-xl-5 pt-5">
+            <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
+                <a href="" class="text-decoration-none">
+                    <h1 class="mb-4 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border border-white px-3 mr-1">F</span>    <img src="static/images/fastlink.png">
+                    </h1>
+                </a>        
+            </div>
+            
+            <div class="col-lg-8 col-md-12">
+                <div class="row">
+                    <div class="col-md-4 mb-5">
+                        <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-dark mb-2" href="{% url 'store' %}"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                            <a class="text-dark mb-2" href="{% url 'store' %}"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
+                            <a class="text-dark mb-2" href="{% url 'contact' %}"><i class="fa fa-angle-right mr-2"></i> Contact Us</a>
+                            <a class="text-dark mb-2" href="{% url 'profile' %}"><i class="fa fa-angle-right mr-2"></i>Profile</a>
+                        
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 mb-5">
+                        <h5 class="font-weight-bold text-dark mb-4">Newsletter</h5>
+                        <form action="">
+                            <div class="form-group">
+                                <input type="text" class="form-control border-0 py-4" placeholder="Your Name" required="required" />
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control border-0 py-4" placeholder="Your Email"
+                                    required="required" />
+                            </div>
+                            <div>
+                                <button class="btn btn-primary btn-block border-0 py-3" type="submit">Subscribe Now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row border-top border-light mx-xl-5 py-4">
+            <div class="col-md-6 px-xl-0">
+                <p class="mb-md-0 text-center text-md-left text-dark">
+                    &copy; <a class="text-dark font-weight-semi-bold" href="#">FastLink Web Services</a>. All Rights Reserved. Designed
+                    by
+                    <a class="text-dark font-weight-semi-bold" href="/">FastLink</a>
+                    {% comment %} <a class="text-dark font-weight-semi-bold" href="https://htmlcodex.com">HTML Codex</a> {% endcomment %}
+                </p>
+            </div>
+            <div class="col-md-6 px-xl-0 text-center text-md-right">
+                <img class="img-fluid" src="img/payments.png" alt="">
+            </div>
+        </div>
+    </div>
     <!-- Footer End -->   
 </body>
 </html>
