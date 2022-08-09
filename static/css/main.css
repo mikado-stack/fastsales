@@ -232,3 +232,15 @@ body,
 		font-size: 15px;
 		font-family: sans-serif;
 	  }
+
+
+	  #messages{
+		background-color: grey;
+		color: #fff;
+		padding: 10px;
+		margin-top: 10px;
+	}
+
+	.containerrr{
+		margin-top: 6%;
+	}

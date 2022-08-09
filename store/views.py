@@ -59,8 +59,7 @@ def register(request):
     return render(request, 'store/register.html', {'form':form})
 
 
-
-def login_user(request):
+def loginPage(request):
     
 	if request.method == 'POST':
 		username = request.POST.get('username')
@@ -70,7 +69,9 @@ def login_user(request):
 
 		if user is not None:
 			login(request, user)
+			messages.success(request, 'Login Successful')
 			return redirect('store')
+			
 		else:
 			messages.info(request, 'Username OR password is incorrect')
 

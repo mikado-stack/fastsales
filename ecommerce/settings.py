@@ -78,16 +78,22 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ecommerce',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-        'USER': 'root',
-        'PASSWORD': '12345678',
-        
-        
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'ecommerce',
+#         'HOST': '127.0.0.1',
+#         'PORT': '3306',
+#         'USER': 'root',
+#         'PASSWORD': '12345678',
+        
+        
+#     }
+# }
 
 
 # Password validation
@@ -145,11 +151,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #SMTP Configuration
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
+EMAIL_HOST = 'smtp.privateemail.com'
+EMAIL_PORT = 	587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'kunsam52@gmail.com'
-EMAIL_HOST_PASSWORD = 'Website1234@'
+EMAIL_HOST_USER = 'support@greenfieldinvesment.com'
+EMAIL_HOST_PASSWORD = 'Hustle@20222'
 
 # Configure Django App for Heroku.
 import django_on_heroku
