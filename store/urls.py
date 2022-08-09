@@ -52,7 +52,7 @@ urlpatterns = [
 
     path('reset_password_complete/', 
         auth_views.PasswordResetCompleteView.as_view(template_name="store/password_reset_done.html"), 
-        name="password_reset_complete"),
+        name="reset_password_complete"),
 
 
 ]
