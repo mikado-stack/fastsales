@@ -77,12 +77,7 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
@@ -96,6 +91,12 @@ DATABASES = {
 #     }
 # }
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join (BASE_DIR, 'db.sqlite3'), 
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -136,7 +137,7 @@ USE_TZ = True
 
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
@@ -155,12 +156,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #SMTP Configuration
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.privateemail.com'
+EMAIL_HOST = 'smtp.zoho.com'
 EMAIL_PORT = 	587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'support@greenfieldinvesment.com'
-EMAIL_HOST_PASSWORD = 'Hustle@20222'
+EMAIL_HOST_USER = 'fastshop@zohomail.com'
+EMAIL_HOST_PASSWORD = 'Website1234@'
 
-# Configure Django App for Heroku.
-import django_on_heroku
-django_on_heroku.settings(locals())
+# # Configure Django App for Heroku.
+# import django_on_heroku
+# django_on_heroku.settings(locals())
